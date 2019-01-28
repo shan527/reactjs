@@ -79,8 +79,8 @@ class Add extends React.Component {
         </div>
 
         <div>
-         <Link to path="/" Component={'LoginForm'}>Click me</Link>
-         
+          <Link to path="/" Component={'LoginForm'}>Click me</Link>
+
         </div>
 
       </form>

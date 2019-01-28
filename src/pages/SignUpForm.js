@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { HashRouter as Route, Link } from 'react-router-dom';
+import SignInForm from './SignInForm';
 
 class SignUpForm extends Component {
 
@@ -12,8 +14,8 @@ class SignUpForm extends Component {
       username: '',
       email: '',
       password: '',
+      mobileno: '',
       errors: {}
-
 
 
     }
@@ -26,22 +28,13 @@ class SignUpForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  //  handleSubmit(e){
-
-  //     localStorage.setItem('username',this.state.username);
-  //     localStorage.setItem('email',this.state.email);
-  //     localStorage.setItem('password',this.state.password);
-  //     this.props.history.push("/sign-in");
-  //    e.preventDefault();
-
-  //  }  
-
 
   validationForm() {
 
     let username = this.state.username;
     let email = this.state.email;
     let password = this.state.password;
+    let mobileno = this.state.mobileno;
     let errors = {};
     let formIsValid = true;
     if (!username) {
@@ -49,10 +42,33 @@ class SignUpForm extends Component {
       errors["username"] = "Please enter your name";
     }
 
-      if(!password){
+
+    if (typeof username !== "undefined") {
+      if (!username.match(/^[a-zA-Z ]*$/)) {
         formIsValid = false;
-        errors["password"]="Please enter your Password";
+        errors["username"] = "*Please enter alphabet characters only.";
       }
+    }
+
+
+
+    if (!password) {
+      formIsValid = false;
+      errors["password"] = "Please enter your Password";
+    }
+
+    if (!mobileno) {
+      formIsValid = false;
+      errors["mobileno"] = "*Please enter your mobile no.";
+    }
+
+    if (typeof mobileno !== "undefined") {
+      if (!mobileno.match(/^[0-9]{10}$/)) {
+        formIsValid = false;
+        errors["mobileno"] = "*Please enter valid mobile no.";
+      }
+    }
+
 
     if (typeof email !== "undefined") {
       //regular expression for email validation
@@ -63,7 +79,8 @@ class SignUpForm extends Component {
       }
     }
 
-   
+
+
 
     this.setState({
 
@@ -78,17 +95,17 @@ class SignUpForm extends Component {
 
     e.preventDefault();
     if (this.validationForm()) {
-
+      let mobileno = this.state.mobileno;
       let username = this.state.username;
       let email = this.state.email;
       let password = this.state.password;
-      this.setState({ username: username , email:email , password:password });
-     
-   
-          localStorage.setItem('username',this.state.username);
-          localStorage.setItem('email',this.state.email);
-          localStorage.setItem('password',this.state.password);
-          this.props.history.push("/sign-in"); 
+      this.setState({ username: username, mobileno: mobileno, email: email, password: password });
+
+      localStorage.setItem('mobileno', this.state.mobileno);
+      localStorage.setItem('username', this.state.username);
+      localStorage.setItem('email', this.state.email);
+      localStorage.setItem('password', this.state.password);
+      this.props.history.push("/sign-in");
     }
 
   }
@@ -97,23 +114,32 @@ class SignUpForm extends Component {
     return (
       <div id="main-registration-container main ">
         <div id="register">
-          <h3>Registration page</h3>
+          <h2>Registration</h2>
           <form name="userRegistrationForm" onSubmit={this.handleSubmit} >
-            <label>Name</label>
+            <label>Name:</label>
             <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
             <div className="errorMsg">{this.state.errors.username}</div>
 
+            <label>Phone Number:</label>
+            <input type="text" name="mobileno" value={this.state.mobileno} onChange={this.handleChange} />
+            <div className="errorMsg">{this.state.errors.mobileno}</div>
+
             <label>Email ID:</label>
-            <input type="text" name="email" value={this.state.email}  onChange={this.handleChange} />
+            <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
             <div className="errorMsg">{this.state.errors.email}</div>
 
-            <label>Password</label>
-            <input type="password" name="password"  value={this.state.password} onChange={this.handleChange} />
+            <label>Password:</label>
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
             <div className="errorMsg">{this.state.errors.password}</div>
 
             <input type="submit" className="button" value="Register" />
           </form>
+
+          <Route exact path="/sign-in" component={SignInForm}></Route>
+          <br />
+          Already login ? <Link to="/sign-in" className="">Sign In</Link><br></br>
         </div>
+
       </div>
 
 

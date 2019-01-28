@@ -1,0 +1,147 @@
+Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\Shanti.Yadav.SRMTECHSOL>git clone https://github.com/shan527/reactjs.git
+Cloning into 'reactjs'...
+warning: You appear to have cloned an empty repository.
+
+C:\Users\Shanti.Yadav.SRMTECHSOL>cd reactjs
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>pwd
+'pwd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git add .
+warning: LF will be replaced by CRLF in src/App.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/App.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/App.test.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/index.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/index.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/logo.svg.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/registerServiceWorker.js.
+The file will have its original line endings in your working directory
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git commit -m "added new data"
+[master (root-commit) 36a2bc7] added new data
+ 26 files changed, 1792 insertions(+)
+ create mode 100644 src/Add.js
+ create mode 100644 src/App.css
+ create mode 100644 src/App.js
+ create mode 100644 src/App.test.js
+ create mode 100644 src/Assigment/SignInForm.js
+ create mode 100644 src/Assigment/SignUpForm.js
+ create mode 100644 src/Assigment/form..css
+ create mode 100644 src/ChangeColor.js
+ create mode 100644 src/ChangeText.js
+ create mode 100644 src/LoginForm.js
+ create mode 100644 src/Reference.js
+ create mode 100644 src/RegisterForm.js
+ create mode 100644 src/Sidebar.css
+ create mode 100644 src/count.js
+ create mode 100644 src/counter.js
+ create mode 100644 src/homepage.js
+ create mode 100644 src/index.css
+ create mode 100644 src/index.js
+ create mode 100644 src/logo.svg
+ create mode 100644 src/pages/Dashboad.js
+ create mode 100644 src/pages/Logout.js
+ create mode 100644 src/pages/SignUpForm.js
+ create mode 100644 src/registerServiceWorker.js
+ create mode 100644 src/style.css
+ create mode 100644 src/test3.js
+ create mode 100644 src/update.js
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git push origin master
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (31/31), 15.54 KiB | 2.22 MiB/s, done.
+Total 31 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/shan527/reactjs.git
+ * [new branch]      master -> master
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   src/LoginForm.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   src/LoginForm.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        src/test/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git log
+commit 36a2bc7fc58a44cb182a48cc2b119e8b3b1b5542 (HEAD -> master, origin/master)
+Author: shan527 <shanti.yadav@srmtechsol.com>
+Date:   Mon Jan 28 14:06:41 2019 +0530
+
+    added new data
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs> git add .
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git commit -m "i have added new test folder and changed in loginform"
+[master d79f46b] i have added new test folder and changed in loginform
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/test/LoginForm.js
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 452 bytes | 452.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/shan527/reactjs.git
+   36a2bc7..d79f46b  master -> master
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>
+
+C:\Users\Shanti.Yadav.SRMTECHSOL\reactjs>

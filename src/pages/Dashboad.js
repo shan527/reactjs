@@ -1,62 +1,74 @@
 import React, { Component } from 'react';
-import { HashRouter as Route, Link} from 'react-router-dom';
-import Logout  from './Logout';
+
+
 class Dashboad extends Component {
-  
-  constructor(){    
 
- super(); {
-    
+  constructor(props) {
+    super(props);
+    let username = localStorage.getItem('username');
+    let mobileno = localStorage.getItem('mobileno');
+    let email = localStorage.getItem('email');
+    let password = localStorage.getItem('password');
+    var getauth = localStorage.getItem('auth');
 
- }
- this.handleSignOut =this.handleSignOut.bind(this);
+    if (!getauth) {
+      alert("Please login first");
+      this.props.history.push("/sign-in");
+
+    }
+
+    this.state = {
+      username: username,
+      email: email,
+      password: password,
+      mobileno: mobileno
+    }
+
+
+    this.handleSignOut = this.handleSignOut.bind(this);
   }
 
 
-  handleSignOut(){
+  handleSignOut() {
 
     localStorage.removeItem('email');
     localStorage.removeItem('password');
     localStorage.clear();
     this.props.history.push("/");
-   }
+  }
 
   render() {
     return (
-    
 
 
-  <div className="main">
-   <h2>Hello on Dashboard</h2>
+      <div className="main table-position">
+
+        <h2 className="change-color">Welcome....{this.state.username}</h2>
+        <table htmlcolspan='3'>
+
+          <tr>
+            <td>Username</td>
+            <td>{this.state.username}</td>
+          </tr>
+          <tr>
+            <td>EmailId</td>
+            <td>{this.state.email}</td>
+
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>{this.state.mobileno}</td>
+
+          </tr>
+        </table>
+        <br></br>
+
+        <button className="button1 button3" onClick={this.handleSignOut}>Sign Out</button>
 
 
-
-   <button onClick={this.handleSignOut}>Sign Out</button>
-
+      </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-{/*          
-        <div>
-             <Link to ="/logout" className="Link" >Sign Out</Link><br></br>
-         </div>
-
-         <div>
-
-         <Route exact path="/logout" component={Logout}> </Route> 
-
-         </div>  */}
-</div>
 
 
     );
