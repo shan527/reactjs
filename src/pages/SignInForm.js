@@ -100,7 +100,7 @@ class SignInForm extends Component {
                         
                         <Route exact path="/" component={SignUpForm}></Route>
              <br/>
-          Already login ? <Link to="/" className="">Sign In</Link><br></br>
+             Create Account <Link to="/" className="">Sign Up</Link><br></br>
                     </form>
 
                 </div>
