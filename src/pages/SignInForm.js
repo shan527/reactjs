@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { HashRouter as Route, Link } from 'react-router-dom';
+import SignUpForm from './SignInForm';
 
 class SignInForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
+           
             password: '',
             errors: {},
+
 
         }
         this.handleChange = this.handleChange.bind(this);
@@ -93,7 +97,12 @@ class SignInForm extends Component {
 
 
                         <input type="submit" className="button" value="Register" />
+                        
+                        <Route exact path="/" component={SignUpForm}></Route>
+             <br/>
+          Already login ? <Link to="/" className="">Sign In</Link><br></br>
                     </form>
+
                 </div>
             </div>
         );
