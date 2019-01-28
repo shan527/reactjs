@@ -137,7 +137,7 @@ class SignUpForm extends Component {
 
           <Route exact path="/sign-in" component={SignInForm}></Route>
           <br />
-          Already login ? <Link to="/sign-in" className="">Sign In</Link><br></br>
+          Already have login ? Click here <Link to="/sign-in" className="">Sign In</Link><br></br>
         </div>
 
       </div>
