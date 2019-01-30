@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Redirect, Route, Link } from 'react-router-dom';
 import './App.css';
 import './Sidebar.css';
 import SignInForm from './pages/SignInForm';
 import SignUpForm from './pages/SignUpForm';
 import Dashboad from './pages/Dashboad';
 import Logout from './pages/Logout';
+import My404Component from './pages/error/My404Component';
 
 class App extends Component {
 
@@ -14,24 +15,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="App__Aside"></div>
-          <div className="App__Form">
-            <div className="sidenav">
-          
-              <Link to="/" className="Link">Sign Up</Link><br></br>
-              <Link to="/sign-in" className="Link">Sign In</Link><br></br>
-              <Link to="/logout" className="Link" ></Link><br></br>
-              <Link to="/dashboard" className="Link"></Link><br></br>
-           </div>
-
-          
-            <Route exact path="/sign-in" component={SignInForm}></Route>
+            
             <Route exact path="/" component={SignUpForm}> </Route>
+            <Route exact path="/sign-in" component={SignInForm}></Route>
             <Route exact path="/dashboard" component={Dashboad}> </Route>
-            <Route exact path="/logout" component={Logout}> </Route>
-
-         </div>
-
         </div>
       </Router>
     );

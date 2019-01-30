@@ -11,11 +11,7 @@ class Dashboad extends Component {
     let password = localStorage.getItem('password');
     var getauth = localStorage.getItem('auth');
 
-    if (!getauth) {
-      alert("Please login first");
-      this.props.history.push("/sign-in");
-
-    }
+    
 
     this.state = {
       username: username,
@@ -23,7 +19,10 @@ class Dashboad extends Component {
       password: password,
       mobileno: mobileno
     }
+    if (!getauth) {
+          this.props.history.push("/sign-in");
 
+    }
 
     this.handleSignOut = this.handleSignOut.bind(this);
   }
@@ -31,10 +30,8 @@ class Dashboad extends Component {
 
   handleSignOut() {
 
-    localStorage.removeItem('email');
-    localStorage.removeItem('password');
-    localStorage.clear();
-    this.props.history.push("/");
+    localStorage.removeItem('auth');
+    this.props.history.push("/sign-in");
   }
 
   render() {

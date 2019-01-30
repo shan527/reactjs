@@ -13,6 +13,11 @@ class SignInForm extends Component {
 
 
         }
+        var getauth = localStorage.getItem('auth');
+        if (getauth) {
+          this.props.history.push("/dashboard");
+
+        }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -54,7 +59,8 @@ class SignInForm extends Component {
 
 
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
 
 
         if (this.validationForm()) {
@@ -96,11 +102,11 @@ class SignInForm extends Component {
                         <div className="errorMsg">{this.state.errors.password}</div>
 
 
-                        <input type="submit" className="button" value="Register" />
+                        <input type="submit" className="button" value="Login" />
                         
-                        <Route exact path="/" component={SignUpForm}></Route>
+                    
              <br/>
-             Create Account <Link to="/" className="">Sign Up</Link><br></br>
+              Create Account <Link to="/" className="">Register</Link><br></br>
                     </form>
 
                 </div>
